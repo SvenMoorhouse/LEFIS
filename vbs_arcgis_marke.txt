@@ -1,0 +1,58 @@
+Function FindLabel ( [AX11003.ABM] )
+'berücksichtigt gem. Anlage 1 zur LEA
+
+select case  [AX11003.ABM]
+	case "Marke, allgemein" '1000
+		txtMarke = ""
+	case "Stein, Grenzstein" '1110
+		txtMarke = "St"
+	case "Kunststoffmarke" '1140
+		txtMarke = "K"
+	case "Landesgrenzstein" '1160
+		txtMarke = "LGSt"
+	case "Stein mit Besonderheiten in Form oder Material" '1190
+		txtMarke = "St"
+	case "Rohr" '1200
+		txtMarke = "R"
+	case "Rohr mit Schutzkappe" '1201
+		txtMarke =  "R"
+	case "Rohr mit Kopf" '1202
+		txtMarke =  "R"		
+	case "Kunststoffrohr" '1220
+		txtMarke =  "KR"		
+	case "Drainrohr" '1230
+		txtMarke =  "D"		
+	case "Rohr mit Schutzkasten" '1230
+		txtMarke =  "RS"		
+	case "Bolzen" '1310
+		txtMarke =  "B"		
+	case "Nagel" '1320
+		txtMarke =  "N"	
+	case "Meißelzeichen" '1400
+		txtMarke =  "Kr"	
+	case "Pfahl" '1500
+		txtMarke =  "Pf"	
+	case "Flasche" '1620
+		txtMarke =  "Fl"	
+	case "Hohlziegel" '1640
+		txtMarke =  "H"	
+	case "Klebemarke" '1650
+		txtMarke =  "Kl"	
+	case "Kanaldeckel" '1660
+		txtMarke =  "KD"	
+	case "Sockel (roh)" '1711
+		txtMarke =  "Sr"	
+	case "Sockel (verputzt, verkleidet, o.ä.)" '1712
+		txtMarke =  "Sv"	
+	case "Mauerecke (roh)" '1713
+		txtMarke =  "MEr"	
+	case "Mauerecke (verputzt, verkleidet, o.ä.)" '1714
+		txtMarke =  "MEv"	
+	case "Ohne Marke"  '9500
+		txtMarke =  ""
+	case "Nach Quellenlage nicht zu spezifizieren"  '9998
+		txtMarke =  ""
+end select
+  FindLabel = txtMarke 
+End Function 
+
